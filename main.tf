@@ -1,4 +1,4 @@
-resource "aws_batch_job_definition" "test" {
+resource "aws_batch_job_definition" "batch_job_definition" {
   name = "${var.name}"
   type = "${var.type}"
 
