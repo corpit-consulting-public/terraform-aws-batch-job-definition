@@ -3,13 +3,11 @@
 variable "name" {
   type        = "string"
   description = "Specifies the name of the job definition"
-  default     = ""
 }
 
 variable "container_properties" {
   type        = "string"
   description = "A valid container properties provide as a single valid JSON document. This parameters is required if the type parameter is container"
-  default     = ""
 }
 
 variable "parameters" {
@@ -33,7 +31,6 @@ variable "timeout" {
 variable "type" {
   type        = "string"
   description = "The type of job definition. Must be container"
-  default     = ""
 }
 
 ###Variable for retry_strategy
