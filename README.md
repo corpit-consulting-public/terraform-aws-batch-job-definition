@@ -4,12 +4,15 @@
 A job definition specifies how jobs are to be run; you can think of it as a blueprint for the resources in your job. You can supply your job with an IAM role to provide programmatic access to other AWS resources, and you specify both memory and CPU requirements.
 he job definition can also control container properties, environment variables, and mount points for persistent storage. Many of the specifications in a job definition can be overridden by specifying new values when submitting individual Jobs
 ## Usage
-```hcl 
+
+```hcl
+ 
 module "batch-job-definition" {
   name                 = "${var.name}"
   type                 = "${var.type}"
   container_properties = "${var.container_properties}"
 }
+
 ######For its correct operation it is advisable to create a container_properties.json file and consume the variable from that file.######
 
 ```
