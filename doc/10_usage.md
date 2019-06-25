@@ -1,5 +1,7 @@
 ## Usage
-```hcl 
+
+```hcl
+ 
 module "batch-job-definition" {
   name                 = "${var.name}"
   type                 = "${var.type}"
