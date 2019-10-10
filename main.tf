@@ -2,37 +2,5 @@ resource "aws_batch_job_definition" "batch_job_definition" {
   name = "${var.name}"
   type = "${var.type}"
 
-  container_properties = <<CONTAINER_PROPERTIES
-{
-    "command": ["ls", "-la"],
-    "image": "busybox",
-    "memory": 1024,
-    "vcpus": 1,
-    "volumes": [
-      {
-        "host": {
-          "sourcePath": "/tmp"
-        },
-        "name": "tmp"
-      }
-    ],
-    "environment": [
-        {"name": "VARNAME", "value": "VARVAL"}
-    ],
-    "mountPoints": [
-        {
-          "sourceVolume": "tmp",
-          "containerPath": "/tmp",
-          "readOnly": false
-        }
-    ],
-    "ulimits": [
-      {
-        "hardLimit": 1024,
-        "name": "nofile",
-        "softLimit": 1024
-      }
-    ]
-}
-CONTAINER_PROPERTIES
+  container_properties = ${var.container_properties}
 }
