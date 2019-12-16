@@ -25,12 +25,10 @@ If you want to update README.md file, run that script while being in 'hooks' fol
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| attempt\_duration\_seconds | The time duration in seconds after which AWS Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds | string | `"60"` | no |
-| attempts | The number of time to move a job to the RUNNABLE status. You may specify between 1 and 10 attemps | string | `""` | no |
-| container\_properties | A valid container properties provide as a single valid JSON document. This parameters is required if the type parameter is container | string | n/a | yes |
-| name | Specifies the name of the job definition | string | n/a | yes |
-| parameters | Specifies the parameters substitution placeholders to set in the job definition | string | `""` | no |
-| retry\_strategy | Specifies the retry strategy to use for failed jobs thst are submitted with this job definition. Maximun number of retry_strategy is 1. Defined below | string | `""` | no |
-| timeout | Specifies the timeout for jobs so that if job runs longer, AWS Batch terminates the job. Maximun number of timeout is 1 | string | `""` | no |
-| type | The type of job definition. Must be container | string | n/a | yes |
+| attempt\_duration\_seconds | The time duration in seconds after which AWS Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds | string | `60` | no |
+| attempts | The number of time to move a job to the RUNNABLE status. You may specify between 1 and 10 attemps | string | `1` | no |
+| container\_properties | A valid container properties provide as a single valid JSON document. This parameters is required if the type parameter is container | string | - | yes |
+| name | Specifies the name of the job definition | string | - | yes |
+| parameters | Specifies the parameters substitution placeholders to set in the job definition | map | `<map>` | no |
+| type | The type of job definition. Must be container | string | - | yes |
 
