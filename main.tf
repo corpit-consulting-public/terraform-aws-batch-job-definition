@@ -6,7 +6,7 @@ resource "aws_batch_job_definition" "batch_job_definition" {
 
   parameters = "${var.parameters}"
 
-  retry_variables = {
+  retry_strategy = {
     attempts = "${var.attempts}"
   }
 
