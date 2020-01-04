@@ -11,21 +11,9 @@ variable "container_properties" {
 }
 
 variable "parameters" {
-  type        = "string"
+  type        = "map"
   description = "Specifies the parameters substitution placeholders to set in the job definition"
-  default     = ""
-}
-
-variable "retry_strategy" {
-  type        = "string"
-  description = "Specifies the retry strategy to use for failed jobs thst are submitted with this job definition. Maximun number of retry_strategy is 1. Defined below"
-  default     = ""
-}
-
-variable "timeout" {
-  type        = "string"
-  description = "Specifies the timeout for jobs so that if job runs longer, AWS Batch terminates the job. Maximun number of timeout is 1"
-  default     = ""
+  default     = {}
 }
 
 variable "type" {
@@ -38,7 +26,7 @@ variable "type" {
 variable "attempts" {
   type        = "string"
   description = "The number of time to move a job to the RUNNABLE status. You may specify between 1 and 10 attemps"
-  default     = ""
+  default     = "1"
 }
 
 ##Variable for timeout
