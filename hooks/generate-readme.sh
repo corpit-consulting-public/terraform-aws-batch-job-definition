@@ -9,7 +9,7 @@ for i in `ls doc`
 done
 
 if [ $TERRA -eq "12" ] ; then
- docker run --rm -v $(pwd):/data cytopia/terraform-docs terraform-docs-012 --sort-inputs-by-required md . >> README.md
+ docker run --rm -v $(pwd):/data cytopia/terraform-docs terraform-docs-012 md . >> README.md
 else
  terraform-docs md --sorted--sort-inputs-by-required . >> README.md
 fi
