@@ -5,5 +5,5 @@ output "job_definition_name" {
 
 output "job_definition_arn" {
   description = "Job Definition ARN"
-  vaule       = aws_batch_job_definition.batch_job_definition.arn
+  value       = aws_batch_job_definition.batch_job_definition.arn
 }
